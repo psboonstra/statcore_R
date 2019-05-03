@@ -1,0 +1,39 @@
+---
+title: "Biostatistics Toolkit 1"
+output:
+  html_document:
+    df_print: paged
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this "chunk" by clicking the *Run* button (the green triangle in the upper right of chunk) or by placing your cursor inside it and pressing *Cmd+Shift+Enter* (*Ctrl+Shift+Enter* on Windows) at the same time. The result should appear immediately below the chunk. 
+
+```{r}
+3+3;
+```
+
+Click the *Knit* button or press *Cmd+Shift+K* (*Ctrl+Shift+K*) to create the HTML file. You can re-knit as often as you like. Now, add a new chunk below. To do so, put your cursor where you want it to go and click *Code* > *Insert Chunk* from the toolbar or  press *Cmd+Option+I* (*Ctrl+Alt+I*). Type in your favorite arithmetic operation and try running the chunk. 
+
+
+## Exercises
+
+Run the following chunks. Based on the input and the output, hypothesize what the code does, and type it above each chunk.
+
+
+1.
+```{r}
+sample(1:6, size = 20, replace = TRUE);
+```
+
+
+2. 
+```{r}
+install.packages("ggplot2");
+library(ggplot2);
+```
+
+3. 
+```{r}
+getwd();
+```
