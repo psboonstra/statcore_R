@@ -1,5 +1,5 @@
 ---
-title: "Biostatistics Toolkit 1"
+title: "Biostatistics Toolkit 1: Introduction"
 output:
   html_document:
     df_print: paged
@@ -7,33 +7,69 @@ output:
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
 
-Try executing this "chunk" by clicking the *Run* button (the green triangle in the upper right of chunk) or by placing your cursor inside it and pressing *Cmd+Shift+Enter* (*Ctrl+Shift+Enter* on Windows) at the same time. The result should appear immediately below the chunk. 
+Try executing this code "chunk" by clicking the *Run* button (the green triangle in the upper right of chunk) or by placing your cursor inside it and pressing *Cmd+Shift+Enter* (*Ctrl+Shift+Enter* on Windows) at the same time. The output should appear immediately below the chunk. 
 
 ```{r}
 3+3;
 ```
 
-Click the *Knit* button or press *Cmd+Shift+K* (*Ctrl+Shift+K*) to create the HTML file. You can re-knit as often as you like. Now, add a new chunk below. To do so, put your cursor where you want it to go and click *Code* > *Insert Chunk* from the toolbar or  press *Cmd+Option+I* (*Ctrl+Alt+I*). Type in your favorite arithmetic operation and try running the chunk. 
-
+Now, add a new chunk below. To do so, put your cursor where you want it to go and click *Code* > *Insert Chunk* from the toolbar or  press *Cmd+Option+I* (*Ctrl+Alt+I*). Type in your favorite arithmetic operation and try running the chunk. 
 
 ## Exercises
 
-Run the following chunks. Based on the input and the output, hypothesize what the code does, and type it above each chunk.
+Run the following chunks. Based on the input and the output: hypothesize what the code is doing, and type your answer below, replacing the 'XXX'. 
 
-
-1.
 ```{r}
-sample(1:6, size = 20, replace = TRUE);
+sample(x = 1:6, size = 20, replace = TRUE);
+```
+1. XXX
+
+Compare the output from the code chunk immediately that appears on your computer to that of a neighbor. Is it identical?
+
+2. XXX
+
+```{r}
+set.seed(1);
+sample(x = 1:6, size = 20, replace = TRUE);
 ```
 
+Compare again your output to a neighbor's. Is it identical?
 
-2. 
+3. XXX
+
 ```{r}
+x <- c(1, 0.02, 10.3, 8);
+x; 
+sort(x);
+```
+
+4. XXX
+
+```{r}
+mean(x);
+log(x);
+```
+
+5. XXX
+
+```{r, eval = F}
 install.packages("ggplot2");
 library(ggplot2);
 ```
+6. XXX
 
-3. 
 ```{r}
 getwd();
 ```
+
+7. XXX
+
+## Bonus question 
+
+Can you use what you've see so far to create a new `R` chunk below that calculates the average of the logarithm of `x`?
+
+## Putting it all together
+
+Click the *Knit* button or press *Cmd+Shift+K* (*Ctrl+Shift+K*) to create an HTML file of your entire notebook. You've finished your first notebook!
+
+
