@@ -27,7 +27,7 @@ library(tidyverse);
 
 The first chunk you ran above checks to see if a particular package (`datasauRus` or `tidyverse`, keep reading for a description of these packages) is *installed* on your computer, i.e. downloaded onto your hard drive. After installing a package, you generally only ever need to re-install it if you've updated `R` or if the package is updated. Thus, the chunk first checks to see if each package has already been installed. 
 
-The second chunk you just ran *loads* and *attaches* the `datasauRus` and `tidyverse` packages into your current session of `R`. This generally needs to be done each time you open `R`, but there is no harm in running a `library` statement. 
+The second chunk you just ran *loads* and *attaches* the `datasauRus` and `tidyverse` packages into your current session of `R`. This generally needs to be done each time you open `R`, but there is no harm in re-running a `library` statement. 
 
 The `datasauRus` package gives us the first dataset we'll be inspecting, which is called `datasaurus_dozen`, and the `tidyverse` (which is actually a lot of packages -- a package of packages) gives us an excellent suite of tools for manipulating the data. 
 
@@ -56,6 +56,7 @@ Do you see the numbers 1 to 13 next to each unique name? I want you to create a 
 *NOTE*: you need to complete the next code chunk before it will run. Replace the first instance of `<XXX>` below with the appropriate choice of one of the five verbs we've learned about (`filter`, `arrange`, `summarize`, `mutate`, or `select`), and replace the second instance of `<XXX>` with one of the thirteen unique names that was printed from running the previous chunk. Be sure that you leave the double quotes surrounding the second `<XXX>`. After you've made these replacements, run the chunk. 
 
 ```{r}
+#This chunk will not run until you've replaced the <XXX>s below!
 my_dataset <-
   <XXX>(datasaurus_dozen, dataset == "<XXX>");
 ```

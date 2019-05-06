@@ -36,7 +36,7 @@ After running this chunk, you should have received an informational message from
 rat_data;
 ```
 
-`R` has interpreted the observation number, the rat ID, and age (in days) of the rat at each observation as integers; the treatment label is a character; and the response is a double (a real number). These decisions are acceptable with one exception. Specifically, I would say that the rat ID is not a true integer, e.g. rat \# 5 is not greater than rat \# 3, but should rather be considered a *character*. Re-read in the data using the following chunk, replacing the `<XXX>` with the appropriate value. 
+`R` has interpreted the observation number, the rat ID, and age (in days) of the rat at each observation as integers; the treatment label is a character; and the response is a double (a real number). These decisions are acceptable with one exception. Specifically, I would say that the rat ID is not a true integer, e.g. rat \# 5 is not "greater" than rat \# 3, and should instead be considered a *character*, that is, a label. Re-read in the data using the following chunk, replacing the `<XXX>` with the appropriate value. 
 
 ```{r}
 rat_data <- read_csv("rats.csv",
@@ -45,7 +45,7 @@ rat_data <- read_csv("rats.csv",
 
 ## Spaghettti plots
 
-These data are slightly more complicated than the birthweight data, because of the longitudinal aspect of the data. Let's try something we know first. Run the following two chunks (the first might take `R` a little while to create):
+These data are slightly more complicated than the birthweight data, because of their longitudinal aspect. Let's try something we know first. Run the following two chunks (the first might take `R` a little while to create):
 
 ```{r}
 ggplot(rat_data) +
@@ -66,7 +66,7 @@ What crucial aspect of the data are you not able to see in either of the above p
 
 <XXX>
 
-There's a geom for connecting the dots, and you might even surmise its name: `geom_line`. Type the following code in your console to pull up its help page: `?geom_line`. As you type, notice how `R`studio pulls up suggestions for what you might be typing, similar to what Google does with its search engine. If you ever see what you're looking for in the list of suggestions, navigate to it using the up- or down-arrows and press 'enter' to fill it in. 
+There's a geom for connecting the dots, and you might even be able to surmise its name: `geom_line`. Type the following code in your console to pull up its help page: `?geom_line`. As you type, notice how `R`studio pulls up suggestions for what you might be typing, similar to what Google does with its search engine. If you ever see what you're looking for in the list of suggestions, navigate to it using the up- or down-arrows and press 'enter' to fill it in. 
 
 Reading the help page, we see that there are actually several options to choose from. The first two sentences of the help page for `geom_line` are as follows: *geom_path() connects the observations in the order in which they appear in the data. geom_line() connects them in order of the variable on the x axis.* Based on this, which one of these are we interested in? 
 
@@ -97,11 +97,11 @@ ggplot(rat_data) +
   geom_<XXX>(aes(x = age, y = response, group = rat, color = treat));
 ```
 
-Note: now we *want* the legend for color. 
+Note: now we *want* the legend for color, since it is more easily and meaningfully interpreted. 
 
 ## Even fancier
 
-Let's apply some `tidyverse` expertise to create some nice visual summaries. Run the following chunk:
+Let's apply some `tidyverse` expertise to create a nice visual addon. Run the following chunk:
 
 ```{r}
 rat_data <- 
@@ -124,11 +124,11 @@ ggplot(rat_data) +
 
 Look carefully at the above chunk: `size` is *outside* of the call to `aes()`, and it has an explicit value of 1.5 and not a variable name. An aesthetic links a visual characteristic to the value of a variable, so technically `size` is not an aesthetic in this context. 
 
-Now, make your own plot, trying to include as many of the following characteristics as possible.  
+For your very last task, create your own plot in the chunk below, trying to include as many of the following characteristics as possible:
 
-(i) each individual mouse spaghetti is plotted, colored by treatment group
-(ii) the average spaghetti over all rats in each treatment group is plotted, and the size of the is set to 1.5
-(iii) in order to minimize the visual impact of any given rat's spaghetti, make it slightly transparent by putting `alpha = 0.5` at the right place in the right geom. 
+(i) each individual rat spaghetti is plotted, colored by treatment group
+(ii) the average spaghetti over all rats in each treatment group is plotted, and the size of the line is set to 1.5
+(iii) in order to minimize the visual impact of any individual rat's spaghetti, make them slightly transparent by putting `alpha = 0.5` at the right place in the right geom. 
 
 Hint: you've done most of the work already, you just need to "add" the right geoms together and tweak a few things.
 
