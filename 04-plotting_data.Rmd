@@ -9,7 +9,7 @@ output:
 
 In this last notebook of today's workshop, you'll get more practice reading in data and make some cool plots in `ggplot`. As before, anything with an `<XXX>` requires an answer from you. 
 
-As always, let's make sure you've loaded the tidyverse. 
+As always, let's make sure you've loaded the tidyverse:
 
 ```{r}
 library(tidyverse);

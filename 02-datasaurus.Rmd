@@ -11,12 +11,12 @@ This notebook has two goals:
 
 First, it will give you practice working with a dataset that is already in `R` (we'll practice reading in datasets later today). Second, it will try to convince you that numerical summaries of data may not be as informative as you hope. 
 
-If you haven't yet done so, install and load some packages that you'll need. Run the following chunks
+If you haven't yet done so, install and load some packages that you'll need. Run the following two chunks (Notice that I use `#` to give some context in each chunk; `R` ignores everything on a line that follows a `#`)
 
 ```{r}
 #You need to run this chunk once
-install.packages("datasauRus");
-install.packages("tidyverse");
+if(!require(datasauRus)) install.packages("datasauRus",repos = "http://cran.us.r-project.org");
+if(!require(tidyverse)) install.packages("tidyverse",repos = "http://cran.us.r-project.org");
 ```
 
 ```{r}
@@ -25,11 +25,11 @@ library(datasauRus);
 library(tidyverse);
 ```
 
-You only ever need to install a package once, but you need to load it each time you start `R`
+The first chunk you ran above checks to see if a particular package (`datasauRus` or `tidyverse`, keep reading for a description of these packages) is *installed* on your computer, i.e. downloaded onto your hard drive. After installing a package, you generally only ever need to re-install it if you've updated `R` or if the package is updated. Thus, the chunk first checks to see if each package has already been installed. 
 
-Notice that I'm using `#` to give some context in each chunk; `R` ignores everything on a line that follows a `#`
+The second chunk you just ran *loads* and *attaches* the `datasauRus` and `tidyverse` packages into your current session of `R`. This generally needs to be done each time you open `R`, but there is no harm in running a `library` statement. 
 
-The `datasauRus` gives us the first dataset we'll be inspecting, which is called `datasaurus_dozen`, and the `tidyverse` (which is actually a lot of packages -- a package of packages) gives us an excellent suite of tools for manipulating the data. 
+The `datasauRus` package gives us the first dataset we'll be inspecting, which is called `datasaurus_dozen`, and the `tidyverse` (which is actually a lot of packages -- a package of packages) gives us an excellent suite of tools for manipulating the data. 
 
 ```{r}
 datasaurus_dozen;
