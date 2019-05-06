@@ -1,10 +1,15 @@
 ---
 title: "Biostatistics Toolkit 2: The Datasaurus Dozen"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
+## Introduction 
+
 This notebook has two goals:
-First, to give you practice working with a dataset that is already in `R` (we'll practice reading in datasets later today). Second, to convince you that numerical summaries of data may not be as informative as you hope. 
+
+First, it will give you practice working with a dataset that is already in `R` (we'll practice reading in datasets later today). Second, it will try to convince you that numerical summaries of data may not be as informative as you hope. 
 
 If you haven't yet done so, install and load some packages that you'll need. Run the following chunks
 
@@ -20,6 +25,8 @@ library(datasauRus);
 library(tidyverse);
 ```
 
+You only ever need to install a package once, but you need to load it each time you start `R`
+
 Notice that I'm using `#` to give some context in each chunk; `R` ignores everything on a line that follows a `#`
 
 The `datasauRus` gives us the first dataset we'll be inspecting, which is called `datasaurus_dozen`, and the `tidyverse` (which is actually a lot of packages -- a package of packages) gives us an excellent suite of tools for manipulating the data. 
@@ -30,9 +37,9 @@ datasaurus_dozen;
 
 Running the above chunk shows you the first few rows of the `datasaurus_dozen` dataset. In `R` a dataset is usually given as a special object called a `data.frame` or a `tibble` (or both). 
 
-How many columns does `datasaurus_dozen` have? XXX 
+How many columns does `datasaurus_dozen` have? <XXX> 
 
-How many rows? XXX
+How many rows? <XXX>
 
 ## Creating your personal dataset
 
@@ -46,11 +53,11 @@ This selects the first column of `datasaurus_dozen`, which is named `dataset`, a
 
 Do you see the numbers 1 to 13 next to each unique name? I want you to create a dataset that only contains the rows for one of these 13 datasets, corresponding to the number that you should have been assigned. So, if you were assigned number 7, then your dataset would be the 7th unique value, i.e. `high_lines`. If you were assigned number 12, then your dataset would be the 12th unique value, i.e. `slant_down`. 
 
-*NOTE*: you need to complete the next code chunk before it will run. Replace the first instance of 'XXX' below with the appropriate choice of one of the five verbs we've learned about (`filter`, `arrange`, `summarize`, `mutate`, and `select`), and replace the second instance of 'XXX' with one of the thirteen unique names from the previous chunk. Be sure that you leave the double quotes surrounding the second 'XXX'. After you've made these replacements, run the chunk. 
+*NOTE*: you need to complete the next code chunk before it will run. Replace the first instance of `<XXX>` below with the appropriate choice of one of the five verbs we've learned about (`filter`, `arrange`, `summarize`, `mutate`, or `select`), and replace the second instance of `<XXX>` with one of the thirteen unique names that was printed from running the previous chunk. Be sure that you leave the double quotes surrounding the second `<XXX>`. After you've made these replacements, run the chunk. 
 
 ```{r}
 my_dataset <-
-  XXX(datasaurus_dozen, dataset == "XXX");
+  <XXX>(datasaurus_dozen, dataset == "<XXX>");
 ```
 
 Let's confirm that you've created what you were supposed to create:
@@ -61,10 +68,10 @@ unique(select(my_dataset,dataset));
 
 Your personalized dataset should have only one unique value, namely the one that you were assigned. 
 
-Calculate mean and standard deviations of the `x` and `y` columns, and the pairwise correlation, across all rows of the dataset by replacing the instance of 'XXX' below with the appropriate choice of one of the five verbs we've learned about (`filter`, `arrange`, `summarize`, `mutate`, and `select`). Run the chunk when you've selected the variable. 
+Calculate mean and standard deviations of the `x` and `y` columns, and the pairwise correlation, across all rows of the dataset by replacing the instance of `<XXX>` below with the appropriate choice of one of the five verbs we've learned about (`filter`, `arrange`, `summarize`, `mutate`, or `select`). Run the chunk when you've selected the variable. 
 
 ```{r}
-XXX(my_dataset, 
+<XXX>(my_dataset, 
     mean_x = mean(x),
     mean_y = mean(y),
     std_dev_x = sd(x),
@@ -72,11 +79,18 @@ XXX(my_dataset,
     corr_x_y = cor(x, y));
 ```
 
-Respond to the polleverywhere question. Finally, run the following chunk, which should create a scatterplot of your dataset (y against x). 
+## Plotting your data
+
+Finally, run the following chunk, which should create a scatterplot of your dataset ($y$ against $x$). For now, don't worry about understanding the details.
 
 ```{r}
-ggplot(data = my_dataset, 
-       mapping = aes(x = x, y = y)) + 
-  geom_point();
+ggplot(data = my_dataset) + 
+  geom_point(mapping = aes(x = x, y = y));
 ```
+
+
+## Putting it all together
+
+Don't forget to click the *Knit* button or press *Cmd+Shift+K* (*Ctrl+Shift+K*) to create an HTML file of your entire notebook. That's two notebooks you've finished now!
+
 

@@ -1,0 +1,107 @@
+---
+title: "Biostatistics Toolkit 3: Reading in Data"
+output:
+  html_document:
+    df_print: paged
+---
+
+## Introduction 
+
+In this notebook, you'll learn how to read in data from outside `R` and hone your tidyverse skills. As before, anything with an `<XXX>` requires an answer from you. 
+
+First, let's make sure you've loaded the tidyverse. 
+
+```{r}
+library(tidyverse);
+```
+
+In your directory is an Excel spreadsheet named 'Low Birthweight.xlsx'. If you have Excel, open it up. It contains two sheets: the first contains the data, and the second contains the data dictionary. Open the dictionary. The description of the data is as follows:
+
+*These data come from Appendix 1 of Hosmer and Lemeshow (1989), and were  collected at Baystate Medical Center, Springfield MA, during 1986.* 
+
+*Low birth weight is an outcome that has been of concern to physicians for years. This is due to the fact that infant mortality rates and birth defect rates are very high for low birth weight babies. A woman's behavior during pregnancy (including diet, smoking habits, and receiving prenatal care) can greatly alter the chances of carrying the baby to term and, consequently, of delivering a baby of normal birth weight.*
+
+Also in your directory is a comma-separated value (.csv) file called 'Low Birthweight.csv'. This is a copy of the data sheet in a different format. You don't need to open it, but, for various reasons, data that are stored in a .csv format are much easier to open in `R` and other software packages than data stored in a .xlsx format (if you have ever tried to type the fraction '1/2' in an Excel spreadsheet only to find Excel obstinately insist you intended to write '2-Jan', you'll understand that Excel likes to make unhelpful assumptions about data). Refer to the data dictionary in the .xlsx file when necessary, but we'll read in the .csv file. 
+
+One of the packages in the `tidyverse` is called `readr`, which provides functions for reading in .csv files (`read_csv()`). Let's read in the data now. 
+
+```{r}
+lwt_data <- read_csv("Low Birthweight.csv", 
+                     col_types = cols(age = col_double(), 
+                                      lbw = col_integer(),
+                                      lwt = col_double(),
+                                      bwt = col_double(),
+                                      pvft = col_integer(),
+                                      .default = col_character()));
+```
+
+Even if you couldn't have written the above chunk yourself, it's friendly enough that you can make a good guess as to what's going on: we are telling `R` that the `age`, `lwt`, and `bwt` columns are intended to be doubles (i.e. any real number, decimals allowed), the `lbw` and `pvft` columns are intended to be integer valued (whole numbers only, no decimals allowed), and the default behavior for the remaining columns is to treat them like they are character valued.  
+
+## Interpreting code chunks 
+
+Run the following chunks. Using the printed output, your knowledge of the `tidyverse`, the data dictionary, and your general intuition, describe what each of the following chunks does.  
+
+```{r}
+lwt_data %>%
+  group_by(race_eth, smoke) %>%
+  summarize(number = n(),
+            mean_bwt = mean(bwt));
+```
+
+<XXX>
+
+
+```{r}
+lwt_data %>%
+  filter(age > 30 & smoke == 1);
+```
+
+<XXX>
+
+
+```{r}
+lwt_data %>%
+  filter(age > 30 | smoke == 1);
+```
+
+<XXX>
+
+
+```{r}
+lwt_data %>%
+  mutate(lwt_groups = cut(lwt, breaks = quantile(lwt), include.lowest = T)) %>%
+  group_by(lwt_groups) %>%
+  summarize(mean_bwt = mean(bwt));
+```
+
+<XXX>
+
+Do any of the above chunks store their results as a new object? If so, what is the name of the new object? If not, what would you need to add to the chunk to save the result in a new object?
+
+<XXX>
+
+## Writing your own chunk
+
+Comparing those who smoked during their pregnancy versus those who did not, which group had a higher proportion of low birth weights (defined as < 2500 g)? Complete the following chunk and use the results to answer the question. 
+
+```{r, eval = FALSE}
+lwt_data %>%
+  <XXX>
+```
+
+<XXX>
+
+Among the four groups of patients cross-classified by smoking during pregnancy or not and having hypertension or not, which group had the highest proportion of low birth weights (defined as < 2500 g)? Complete the following chunk and use the results to answer the question.
+
+```{r, eval = FALSE}
+lwt_data %>%
+  <XXX>
+```
+
+<XXX>
+
+
+## Putting it all together
+
+Don't forget to click the *Knit* button or press *Cmd+Shift+K* (*Ctrl+Shift+K*) to create an HTML file of your entire notebook. That's three notebooks completed!
+

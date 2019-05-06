@@ -17,16 +17,16 @@ Now, add a new chunk below. To do so, put your cursor where you want it to go an
 
 ## Exercises
 
-Run the following chunks. Based on the input and the output: hypothesize what the code is doing, and type your answer below, replacing the 'XXX'. 
+Run the following chunks. Based on the input and the output: hypothesize what the code is doing, and type your answer below, replacing the `<XXX>`. 
 
 ```{r}
 sample(x = 1:6, size = 20, replace = TRUE);
 ```
-1. XXX
+1. <XXX>
 
 Compare the output from the code chunk immediately that appears on your computer to that of a neighbor. Is it identical?
 
-2. XXX
+2. <XXX>
 
 ```{r}
 set.seed(1);
@@ -35,7 +35,7 @@ sample(x = 1:6, size = 20, replace = TRUE);
 
 Compare again your output to a neighbor's. Is it identical?
 
-3. XXX
+3. <XXX>
 
 ```{r}
 x <- c(1, 0.02, 10.3, 8);
@@ -43,26 +43,25 @@ x;
 sort(x);
 ```
 
-4. XXX
+4. <XXX>
 
 ```{r}
 mean(x);
 log(x);
 ```
 
-5. XXX
+5. <XXX>
 
 ```{r, eval = F}
-install.packages("ggplot2");
-library(ggplot2);
+library(survival);
 ```
-6. XXX
+6. <XXX>
 
 ```{r}
 getwd();
 ```
 
-7. XXX
+7. <XXX>
 
 ## Bonus question 
 
