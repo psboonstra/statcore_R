@@ -1,6 +1,6 @@
 # UMich Global Stat Core Workshop 
 
-This repository contains resources for the 'Expanding Your Biostatistics Toolkit for Biomedical and Public Health Research' workshop offered by the School of Public Health Global Stat Core. You can find the instructor's slides here:
+This repository contains resources for Day 1 (Introduction to `R`) of the 'Expanding Your Biostatistics Toolkit for Biomedical and Public Health Research' workshop offered by the School of Public Health Global Stat Core. You can find the instructor's slides here:
 
 https://www.umich.edu/~philb/GlobalStatCore2019.html
 
