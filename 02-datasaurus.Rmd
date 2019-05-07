@@ -37,9 +37,8 @@ datasaurus_dozen;
 
 Running the above chunk shows you the first few rows of the `datasaurus_dozen` dataset. In `R` a dataset is usually given as a special object called a `data.frame` or a `tibble` (or both). 
 
-How many columns does `datasaurus_dozen` have? <XXX> 
-
-How many rows? <XXX>
+1. How many columns does `datasaurus_dozen` have? How many rows? 
+<XXX> 
 
 ## Creating your personal dataset
 
@@ -49,14 +48,15 @@ How many rows? <XXX>
 unique(select(datasaurus_dozen,dataset));
 ```
 
-This selects the first column of `datasaurus_dozen`, which is named `dataset`, and then gives only the unique values of that column. 
+This selects the first column of `datasaurus_dozen`, which is named `dataset`, and then gives only the unique values of that column. Note the numbers 1 to 13 next to each unique name. 
 
-Do you see the numbers 1 to 13 next to each unique name? I want you to create a dataset that only contains the rows for one of these 13 datasets, corresponding to the number that you should have been assigned. So, if you were assigned number 7, then your dataset would be the 7th unique value, i.e. `high_lines`. If you were assigned number 12, then your dataset would be the 12th unique value, i.e. `slant_down`. 
+For your second task, I want you to create a dataset that only contains the rows for one of these 13 datasets, corresponding to the number that you should have been assigned. So, if you were assigned number 7, then your dataset would be the 7th unique value, i.e. `high_lines`. If you were assigned number 12, then your dataset would be the 12th unique value, i.e. `slant_down`.
 
 *NOTE*: you need to complete the next code chunk before it will run. Replace the first instance of `<XXX>` below with the appropriate choice of one of the five verbs we've learned about (`filter`, `arrange`, `summarize`, `mutate`, or `select`), and replace the second instance of `<XXX>` with one of the thirteen unique names that was printed from running the previous chunk. Be sure that you leave the double quotes surrounding the second `<XXX>`. After you've made these replacements, run the chunk. 
 
-```{r}
+```{r, eval = FALSE}
 #This chunk will not run until you've replaced the <XXX>s below!
+#After you've done so, replace the ```{r, eval = FALSE} above with ```{r}
 my_dataset <-
   <XXX>(datasaurus_dozen, dataset == "<XXX>");
 ```
@@ -69,9 +69,11 @@ unique(select(my_dataset,dataset));
 
 Your personalized dataset should have only one unique value, namely the one that you were assigned. 
 
-Calculate mean and standard deviations of the `x` and `y` columns, and the pairwise correlation, across all rows of the dataset by replacing the instance of `<XXX>` below with the appropriate choice of one of the five verbs we've learned about (`filter`, `arrange`, `summarize`, `mutate`, or `select`). Run the chunk when you've selected the variable. 
+Your third task is to calculate the mean and standard deviations of the `x` and `y` columns, and the pairwise correlation, across all rows of the dataset by replacing the instance of `<XXX>` below with the appropriate choice of one of the five verbs we've learned about (`filter`, `arrange`, `summarize`, `mutate`, or `select`). Run the chunk after replacing the `<XXX>` with your selected verb.  
 
-```{r}
+```{r, eval = FALSE}
+#This chunk will not run until you've replaced the <XXX> below!
+#After you've done so, replace the ```{r, eval = FALSE} above with ```{r}
 <XXX>(my_dataset, 
     mean_x = mean(x),
     mean_y = mean(y),
@@ -92,6 +94,6 @@ ggplot(data = my_dataset) +
 
 ## Putting it all together
 
-Don't forget to click the *Knit* button or press *Cmd+Shift+K* (*Ctrl+Shift+K*) to create an HTML file of your entire notebook. That's two notebooks you've finished now!
+Click the *Knit* button or press *Cmd+Shift+K* (*Ctrl+Shift+K*) to create an HTML file of your entire notebook for those special people in your life. That's two notebooks you've finished now!
 
 

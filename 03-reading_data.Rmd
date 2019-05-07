@@ -15,7 +15,7 @@ First, let's make sure you've loaded the tidyverse.
 library(tidyverse);
 ```
 
-In your directory is an Excel spreadsheet named 'Low Birthweight.xlsx'. If you have Excel, open it up. It contains two sheets: the first contains the data, and the second contains the data dictionary. Open the dictionary. The description of the data is as follows:
+When you created this project from github, included in your new directory is an Excel spreadsheet named 'Low Birthweight.xlsx'. If you have Excel, open it up. It contains two sheets: the first contains the data, and the second contains the data dictionary. Open the dictionary. The description of the data is as follows:
 
 *These data come from Appendix 1 of Hosmer and Lemeshow (1989), and were  collected at Baystate Medical Center, Springfield MA, during 1986.* 
 
@@ -35,7 +35,7 @@ lwt_data <- read_csv("Low Birthweight.csv",
                                       .default = col_character()));
 ```
 
-Even if you couldn't have written the above chunk yourself, it's friendly enough that you can make a good guess as to what's going on: we are telling `R` that the `age`, `lwt`, and `bwt` columns are intended to be doubles (i.e. any real number, decimals allowed), the `lbw` and `pvft` columns are intended to be integer valued (whole numbers only, no decimals allowed), and the default behavior for the remaining columns is to treat them like they are character valued.  
+Even if you couldn't have written the above chunk yourself, the words are friendly enough that you can make a good guess as to what's going on: we are telling `R` that the `age`, `lwt`, and `bwt` columns are intended to be doubles (i.e. any real number, decimals allowed), the `lbw` and `pvft` columns are intended to be integer valued (whole numbers only, no decimals allowed), and the default behavior for the remaining columns is to treat them like they are character valued.  
 
 ## Interpreting code chunks 
 
@@ -48,7 +48,7 @@ lwt_data %>%
             mean_bwt = mean(bwt));
 ```
 
-<XXX>
+1. <XXX>
 
 
 ```{r}
@@ -56,7 +56,7 @@ lwt_data %>%
   filter(age > 30 & smoke == 1);
 ```
 
-<XXX>
+2. <XXX>
 
 
 ```{r}
@@ -64,7 +64,7 @@ lwt_data %>%
   filter(age > 30 | smoke == 1);
 ```
 
-<XXX>
+3. <XXX>
 
 
 ```{r}
@@ -74,34 +74,38 @@ lwt_data %>%
   summarize(mean_bwt = mean(bwt));
 ```
 
-<XXX>
+4. <XXX>
 
 Do any of the above chunks store their results as a new object? If so, what is the name of the new object? If not, what would you need to add to the chunk to save the result in a new object?
 
-<XXX>
+5. <XXX>
 
 ## Writing your own chunk
 
 Comparing those who smoked during their pregnancy versus those who did not, which group had a higher proportion of low birth weights (defined as < 2500 g)? Complete the following chunk and use the results to answer the question. 
 
 ```{r, eval = FALSE}
+#This chunk will not run until you've replaced the <XXX> below!
+#After you've done so, replace the ```{r, eval = FALSE} above with ```{r}
 lwt_data %>%
   <XXX>
 ```
 
-<XXX>
+6. <XXX>
 
 Among the four groups of patients cross-classified by smoking during pregnancy or not and having hypertension or not, which group had the highest proportion of low birth weights (defined as < 2500 g)? Complete the following chunk and use the results to answer the question.
 
 ```{r, eval = FALSE}
+#This chunk will not run until you've replaced the <XXX> below!
+#After you've done so, replace the ```{r, eval = FALSE} above with ```{r}
 lwt_data %>%
   <XXX>
 ```
 
-<XXX>
+7. <XXX>
 
 
 ## Putting it all together
 
-Don't forget to click the *Knit* button or press *Cmd+Shift+K* (*Ctrl+Shift+K*) to create an HTML file of your entire notebook. That's three notebooks completed!
+Click the *Knit* button or press *Cmd+Shift+K* (*Ctrl+Shift+K*) to create an HTML file of your entire notebook that you can share with your favorite people. That's three notebooks completed!
 
