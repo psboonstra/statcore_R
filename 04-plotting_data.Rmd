@@ -1,6 +1,7 @@
 ---
 title: "Biostatistics Toolkit 4: Plotting Data"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
 ---
@@ -151,7 +152,11 @@ Hint: you've done most of the work already, you just need to "add" the right geo
 
 ## Putting it all together
 
-Don't forget to click the *Knit* button or press *Cmd+Shift+K* (*Ctrl+Shift+K*) to create an HTML file of your entire notebook to put on your bulletin board. Congratulations! You're done with four notebooks!
+Don't forget to click the *Knit* button or press *Cmd+Shift+K* (*Ctrl+Shift+K*) to create a PDF of your entire notebook to put on your bulletin board. If you want to create an HTML or Word file instead, click the down arrow next to *Knit* and choose another option; future knits will also knit to this new format until you change it again.  
+
+Another helpful tip: put your cursor anywhere in this document and press *Cmd+Option+P* (*Ctrl+Alt+P* in Windows) to run all chunks above the cursor in your console. 
+
+Congratulations! You're done with four notebooks!
 
 ## References
 

@@ -1,6 +1,7 @@
 ---
 title: "Biostatistics Toolkit 3: Reading in Data"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
 ---
@@ -107,5 +108,9 @@ lwt_data %>%
 
 ## Putting it all together
 
-Click the *Knit* button or press *Cmd+Shift+K* (*Ctrl+Shift+K*) to create an HTML file of your entire notebook that you can share with your favorite people. That's three notebooks completed!
+Click the *Knit* button or press *Cmd+Shift+K* (*Ctrl+Shift+K* in Windows)  to create a PDF of your entire notebook that you can share with your favorite people. If you want to create an HTML or Word file instead, click the down arrow next to *Knit* and choose another option; future knits will also knit to this new format until you change it again.  
+
+Another helpful tip: put your cursor anywhere in this document and press *Cmd+Option+P* (*Ctrl+Alt+P* in Windows) to run all chunks above the cursor in your console. 
+
+That's three notebooks completed!
 

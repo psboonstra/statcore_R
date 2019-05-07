@@ -1,6 +1,7 @@
 ---
-title: "Biostatistics Toolkit 2: The Datasaurus Dozen"
+title: 'Biostatistics Toolkit 2: The Datasaurus Dozen'
 output:
+  pdf_document: default
   html_document:
     df_print: paged
 ---
@@ -94,6 +95,10 @@ ggplot(data = my_dataset) +
 
 ## Putting it all together
 
-Click the *Knit* button or press *Cmd+Shift+K* (*Ctrl+Shift+K*) to create an HTML file of your entire notebook for those special people in your life. That's two notebooks you've finished now!
+Click the *Knit* button or press *Cmd+Shift+K* (*Ctrl+Shift+K*) to create a PDF of your entire notebook to share with those special people in your life. If you want to create an HTML or Word file instead, click the down arrow next to *Knit* and choose another option; future knits will also knit to this new format until you change it again. 
+
+Another helpful tip: put your cursor anywhere in this document and press *Cmd+Option+P* (*Ctrl+Alt+P* in Windows) to run all chunks above the cursor in your console. 
+
+That's two notebooks you've finished now!
 
 
