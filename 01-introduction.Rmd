@@ -8,7 +8,7 @@ output:
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
 
-Try executing this code "chunk" by clicking the *Run* button (the green triangle in the upper right of chunk) or by placing your cursor inside it and pressing *Cmd+Shift+Enter* (*Ctrl+Shift+Enter* on Windows) at the same time. The output should appear immediately below the chunk. 
+Try executing the code "chunk" below, which adds the number 3 to itself, by clicking the *Run* button (the green triangle in the upper right of chunk) or by placing your cursor inside it and pressing *Cmd+Shift+Enter* (*Ctrl+Shift+Enter* on Windows) at the same time. The output should appear immediately below the chunk. 
 
 ```{r}
 3+3;
@@ -18,59 +18,69 @@ Now, add a new chunk below. To do so, put your cursor where you want it to go an
 
 ## Exercises
 
-Run the following chunks. Based on the input and the output: hypothesize what the code is doing, and type your answer below, replacing the `<XXX>`. 
+Run the following chunks. Follow the instructions after each numbered item, replacing the `<XXX>` with your response / answer. 
 
 ```{r}
-sample(x = 1:6, size = 20, replace = TRUE);
-```
-1. <XXX>
-
-Compare the output from the code chunk immediately that appears on your computer to that of a neighbor. Is it identical?
-
-2. <XXX>
-
-```{r}
-set.seed(1);
-sample(x = 1:6, size = 20, replace = TRUE);
+dice_rolls <- sample(x = 1:6, size = 30, replace = TRUE);
+dice_rolls;
 ```
 
-Compare again your output to a neighbor's. Is it identical?
+1. Hypothesize what the code in the chunk above did.
 
-3. <XXX>
+<XXX>
+
+2. Compare the output from the code chunk immediately that appears on your computer to that of a neighbor. Is it identical?
+
+<XXX>
 
 ```{r}
-x <- c(1, 0.02, 10.3, 8);
-x; 
+dice_rolls == 3;
+```
+
+3. Hypothesize what the code in the chunk above did.
+
+<XXX>
+
+```{r}
+library(survival);
+```
+
+4. Hypothesize what the code in the chunk above did.
+
+<XXX>
+
+Assuming you successfully ran the previous code chunk, you now have access to a pre-loaded dataset called `pbc`. A description of the data (which we'll discuss later) is as follows:
+
+"This data is from the Mayo Clinic trial in primary biliary cirrhosis (PBC) of the liver conducted between 1974 and 1984. A total of 424 PBC patients, referred to Mayo Clinic during that ten-year interval, met eligibility criteria for the randomized placebo controlled trial of the drug D-penicillamine." 
+
+For now, let's focus on the albumin measurements taken at baseline. The first line of code below takes the first 20 observations' serum albumin measurement and stores it in a vector called `x`.
+
+```{r}
+x <- pbc$albumin[1:20];
 sort(x);
 ```
 
-4. <XXX>
+5. Hypothesize what the second line of code in the chunk above did.
+
+<XXX>
 
 ```{r}
 mean(x);
 log(x);
 ```
 
-5. <XXX>
+6. You should have seen that `mean(x)` outputs a single number, whereas `log(x)` outputs a set of numbers. Keeping this in mind, hypothesize what the code in the chunk above did and try to explain this difference in outputs. 
 
-```{r, eval = F}
-library(survival);
-```
-6. <XXX>
+<XXX>
 
-```{r}
-getwd();
-```
+7. See if you can create a new `R` chunk below that calculates the average of the logarithm of `x`.
 
-7. <XXX>
+<XXX>
 
-## Bonus question 
-
-Can you use what you've see so far to create a new `R` chunk below that calculates the average of the logarithm of `x`?
 
 ## Putting it all together
 
-If you want to create a final, finished product of your work to share with your partner, children, parents, or labmates, click the *Knit* button or press *Cmd+Shift+K* (*Ctrl+Shift+K*) to create a PDF of your entire notebook. If you want to create an HTML or Word file instead, click the down arrow next to *Knit* and choose another option; future knits will also knit to this new format until you change it again.  
+If you want to create a final, finished product of your work to share with your partner, children, parents, grocer, or labmates, click the *Knit* button or press *Cmd+Shift+K* (*Ctrl+Shift+K*) to create a PDF of your entire notebook. If you want to create an HTML or Word file instead, click the down arrow next to *Knit* and choose another option; future knits will also knit to this new format until you change it again.  
 
 Another helpful tip: put your cursor anywhere in this document and press *Cmd+Option+P* (*Ctrl+Alt+P* in Windows) to run all chunks above the cursor in your console. 
 
